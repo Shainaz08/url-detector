@@ -21,8 +21,7 @@ export default function App() {
     setError("")
     setResult(null)
     try {
-      const { data } = await axios.post("https://url-detector-production-a7f2.up.railway.app/api/analyze", { url })      setResult(data)
-      const risk = data.risk
+const { data } = await axios.post("https://url-detector-production-1d41.up.railway.app/api/analyze", { url })      const risk = data.risk
       setStats(prev => ({
         total: prev.total + 1,
         risky: risk === "High" || risk === "Medium" ? prev.risky + 1 : prev.risky,
