@@ -5,9 +5,12 @@ require('dotenv').config();
 const analyzeRoute = require('./routes/analyze');
 
 const app = express();
+
 app.use(cors({
-  origin: ['https://url-detector-ten.vercel.app', 'http://localhost:5173', 'http://localhost:5174']
-}));app.use(express.json());
+  origin: '*'
+}));
+
+app.use(express.json());
 
 app.use('/api', analyzeRoute);
 
